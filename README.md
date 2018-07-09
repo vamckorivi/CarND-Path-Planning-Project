@@ -19,6 +19,9 @@ For smoothing the acceleration, speed is increased with an increment of 0.224 mp
 
 For avoiding collision, sensor fusion is used to get the information where the cars are present in different lanes. If there is a car in front of our car, then we check if there is a left lane and if there is no car, then move to left lane. If there is a car in the left lane, then check if there is a right lane and if there is no car in the right lane, then move to the right lane. Otherwise, slow down and stay in the same lane.
 
+Car is tested to run for 4.3 miles without any collisions or jerks. Here is the link for the video.
+https://www.youtube.com/watch?v=MpXtK6gVvjc&t=9s
+
 The highway's waypoints loop around so the frenet s value, distance along the road, goes from 0 to 6945.554.
 
 ## Basic Build Instructions
