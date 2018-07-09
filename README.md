@@ -10,6 +10,15 @@ In this project your goal is to safely navigate around a virtual highway with ot
 #### The map of the highway is in data/highway_map.txt
 Each waypoint in the list contains  [x,y,s,dx,dy] values. x and y are the waypoint's map coordinate position, the s value is the distance along the road to get to that waypoint in meters, the dx and dy values define the unit normal vector pointing outward of the highway loop.
 
+#### Model Documentation
+Code for this project is hugely based on the walkthrough provided by Udacity.
+
+Started off with running the car in a straight line with using constant velocity and not calculating any yaw_rates. This will make the car to go off the road. The next step was to use getXY() method to retrieve x and y values for the car so that it goes along the path but is not smooth and collides.
+
+For smoothing the acceleration, speed is increased with an increment of 0.224 mph which smoothens the car drive/speed and then spline is used to retrieve the y_points for a given x_point and previous path is used to get the trajectory of the path, fernet co-ordinates are used to calculate the path/trajectory of the car.
+
+For avoiding collision, sensor fusion is used to get the information where the cars are present in different lanes. If there is a car in front of our car, then we check if there is a left lane and if there is no car, then move to left lane. If there is a car in the left lane, then check if there is a right lane and if there is no car in the right lane, then move to the right lane. Otherwise, slow down and stay in the same lane.
+
 The highway's waypoints loop around so the frenet s value, distance along the road, goes from 0 to 6945.554.
 
 ## Basic Build Instructions
